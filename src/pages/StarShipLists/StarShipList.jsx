@@ -1,9 +1,43 @@
 import React, { Component } from "react";
+import { getAllStarships } from "../../services/sw-api";
+import { Link } from "react-router-dom";
 
 class StarShipList extends Component {
-  state = {};
+  state = {
+    results: [],
+  };
+
+  async componentDidMount() {
+    const shipData = await getAllStarships();
+    console.log(shipData);
+    this.setState({ results: shipData.results });
+  }
+
   render() {
-    return <></>;
+    return (
+      <div>
+        <h1>StarShipList</h1>
+        {this.state.results.map((name) => (
+          <div id="classDiv" key={name.name}>
+            <Link
+              to={{
+                // The pathname is where we'll route to
+                pathname: `/starship`,
+                // The state will be accessible via location in the component we pass it to!
+                state: { name },
+              }}
+            >
+              <img
+                style={{ width: "100px", height: "100px" }}
+                src={`/images/${name.url}.svg`}
+                alt="class-logo"
+              />
+              {name.name}
+            </Link>
+          </div>
+        ))}
+      </div>
+    );
   }
 }
 

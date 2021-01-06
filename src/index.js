@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App/App';
 import reportWebVitals from './reportWebVitals';
+// install npm i react-router-dom to get this working!
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
+// change the following layout!
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <React.StrictMode>
+      <Route render={()=> <App />} />
+    </React.StrictMode>
+  </Router>,
   document.getElementById('root')
 );
 
