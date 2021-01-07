@@ -27,11 +27,6 @@ class StarShipList extends Component {
                 state: { name },
               }}
             >
-              <img
-                style={{ width: "100px", height: "100px" }}
-                src={`/images/${name.url}.svg`}
-                alt="class-logo"
-              />
               {name.name}
             </Link>
           </div>

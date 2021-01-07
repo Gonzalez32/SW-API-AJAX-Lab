@@ -5,4 +5,3 @@ export function getAllStarships() {
     .then(res => res.json())
 }
 
-
