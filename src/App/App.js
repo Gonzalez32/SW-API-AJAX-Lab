@@ -10,7 +10,7 @@ class App extends Component {
   render() { 
     return ( 
       <>
-      <NavBar/>
+      <NavBar />
       <h1>StarWars</h1>
       
       <Route 
