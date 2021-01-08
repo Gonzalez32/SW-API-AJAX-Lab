@@ -11,7 +11,7 @@ class App extends Component {
     return ( 
       <>
       <NavBar />
-      <h1>StarWars</h1>
+      {/* <h1>StarWars</h1> */}
       
       <Route 
           exact path='/'

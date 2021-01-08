@@ -28,21 +28,24 @@ class StarShipList extends Component {
               }}
             >
               <div
-                class="card text-white bg-secondary mb-3"
+                className="row row-cols-1 row-cols-md-2 g-4"
                 // when rendering cards with bootstrap you need to modified style to styles={} to have it working!
-                styles={"max-width: 18rem;"}
+                // styles={"max-width: 18rem;"}
               >
-                <div class="card-header">Header</div>
-                <div class="card-body">
-                  <h5 class="card-title">Secondary card title</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+                <div className="col">
+                  <div className="card">
+                    <div className="card-body bg-secondary text-white">
+                      <h5 className="card-title">Name: {name.name}</h5>
+                      <p className="card-text">
+                        Manufacturer: {name.manufacturer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <h3>{name.name}</h3>
             </Link>
+            <br />
+            <br />
           </div>
         ))}
       </div>

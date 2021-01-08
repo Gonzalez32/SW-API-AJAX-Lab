@@ -44,3 +44,7 @@ h1 {
 #title {
   text-align: center;
 }
+
+.card-body bg-secondary {
+  color: white;
+}

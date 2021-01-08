@@ -18,8 +18,27 @@ class StarshipDetails extends Component {
       <div>
         {starshipDetails.name ? (
           <>
-            <h2>Name: {starshipDetails.name}</h2>
-            <h2>Model: {starshipDetails.model}</h2>
+            <br />
+            <br />
+            <div
+              class="card text-white bg-secondary mb-3"
+              styles={"max-width: 18rem;"}
+            >
+              <div class="card-header">STARSHIP DETAILS</div>
+              <div class="card-body">
+                <h5 class="card-title">Name: {starshipDetails.name}</h5>
+                <p class="card-text">Model: {starshipDetails.model}</p>
+                <p class="card-text">
+                  Passengers: {starshipDetails.passengers}
+                </p>
+                <p class="card-text">
+                  Cargo Capacity: {starshipDetails.cargo_capacity}
+                </p>
+                <p class="card-text">
+                  Starship Class: {starshipDetails.starship_class}
+                </p>
+              </div>
+            </div>
             <Link
               to={{
                 // This route will route us back to starship lists /
