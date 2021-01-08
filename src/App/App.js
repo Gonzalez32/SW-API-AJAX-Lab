@@ -17,7 +17,7 @@ class App extends Component {
       />
       <Route
         exact path='/starship'
-        render={ () => <StarShipPage/>}
+        render={ ({location}) => <StarShipPage location={location} />}
       />
       </>
      );

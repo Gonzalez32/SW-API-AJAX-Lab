@@ -1,28 +1,41 @@
 import React, { Component } from "react";
-import { getAllStarships } from "../../services/sw-api";
+import { getShipDetails } from "../../services/sw-api";
+import { Link } from "react-router-dom";
 
-class StarshipPage extends Component {
+class StarshipDetails extends Component {
   state = {
-    starships: [],
+    url: this.props.location.state.name.url,
+    starshipDetails: {},
   };
-
-  getStarship = (idx) => {
-    return this.state.starships[idx];
-  };
-
   async componentDidMount() {
-    const starship = await getAllStarships(this.state.url);
-    this.setState({ starship });
+    console.log(this.state.url);
+    const starshipDetails = await getShipDetails(this.state.url);
+    this.setState({ starshipDetails });
   }
-
   render() {
+    const { starshipDetails } = this.state;
     return (
-      <>
-        <h1>hihijndsna;lf</h1>
-        <div>{this.state.name}</div>
-      </>
+      <div>
+        {starshipDetails.name ? (
+          <>
+            <h2>Name: {starshipDetails.name}</h2>
+            <h2>Model: {starshipDetails.model}</h2>
+            <Link
+              to={{
+                pathname: "/",
+              }}
+            >
+              Return to home
+            </Link>
+          </>
+        ) : (
+          <>
+            <p>Loading details please wait...</p>
+          </>
+        )}
+      </div>
     );
   }
 }
 
-export default StarshipPage;
+export default StarshipDetails;
