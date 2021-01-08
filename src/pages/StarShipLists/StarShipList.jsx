@@ -21,7 +21,7 @@ class StarShipList extends Component {
           <div id="classDiv" key={name.name}>
             <Link
               to={{
-                // The pathname is where we'll route to
+                // The pathname is route to starship
                 pathname: `/starship`,
                 // The state will be accessible via location in the component we pass it to!
                 state: { name },

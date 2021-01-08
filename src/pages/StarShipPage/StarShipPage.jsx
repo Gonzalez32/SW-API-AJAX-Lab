@@ -22,6 +22,7 @@ class StarshipDetails extends Component {
             <h2>Model: {starshipDetails.model}</h2>
             <Link
               to={{
+                // This route will route us back to starship lists /
                 pathname: "/",
               }}
             >
