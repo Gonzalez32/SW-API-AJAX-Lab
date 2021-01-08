@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App/App';
+// import bootstrap to render on page
+import 'bootstrap/dist/css/bootstrap.css'
 import reportWebVitals from './reportWebVitals';
 // install npm i react-router-dom to get this working!
 import {BrowserRouter as Router, Route} from 'react-router-dom'
